@@ -1,2 +1,3 @@
 # RPGUser
-有readme 4层 设计一套东西 一个核心方法计算战斗力 基础属性尽可能的少
+User 玩家 =》Hero 英雄 =》equipment 装备 =》rune 符文
+
