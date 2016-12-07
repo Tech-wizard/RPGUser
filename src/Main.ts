@@ -118,7 +118,7 @@ class Main extends egret.DisplayObjectContainer {
      */
     private createGameScene():void {
 
-      
+        var user:User = new User("超高校级的领主");
         var hero_1:Hero = new Hero("罗娜", 8, 8, 8, 8, 8, 2);
         var hero_2:Hero= new Hero("波尔", 10, 9, 10, 6, 9, 3);
         hero_1.isInTeam = true;
@@ -130,7 +130,6 @@ class Main extends egret.DisplayObjectContainer {
         hero_1.equip(knife);
         hero_2.equip(sword);
 
-        var user:User = new User("超高校级的领主");
         user.heros.push(hero_1);
         user.heros.push(hero_2);
         console.log(user.getFightPower());

@@ -309,8 +309,6 @@ var Cache: MethodDecorator = (target, propertykey, desc) => {
 
 }
 
-
-
 // var arr: Hero[] = [];
 
 // function test(hero: Hero) {
