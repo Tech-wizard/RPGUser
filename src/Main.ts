@@ -117,9 +117,33 @@ class Main extends egret.DisplayObjectContainer {
      * Create a game scene
      */
     private createGameScene():void {
-    var user = new User();
-    console.log(user);    
+
+      
+        var hero_1:Hero = new Hero("罗娜", 8, 8, 8, 8, 8, 2);
+        var hero_2:Hero= new Hero("波尔", 10, 9, 10, 6, 9, 3);
+        hero_1.isInTeam = true;
+        hero_2.isInTeam = true;
+        var ruen_1: rune[] = [new rune(2), new rune(3)];
+        var ruen_2: rune[] = [new rune(3), new rune(4)];
+        var knife:Equipment = new Equipment("小刀", 1, 10, ruen_1);
+        var sword:Equipment = new Equipment("宝剑",1,15,ruen_2);
+        hero_1.equip(knife);
+        hero_2.equip(sword);
+
+        var user:User = new User("超高校级的领主");
+        user.heros.push(hero_1);
+        user.heros.push(hero_2);
+        console.log(user.getFightPower());
+    
+
+        
+    }
+
 }
-}
+
+
+
+    
+
 
 
