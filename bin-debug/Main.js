@@ -101,6 +101,7 @@ var Main = (function (_super) {
      * Create a game scene
      */
     p.createGameScene = function () {
+        var user = new User("超高校级的领主");
         var hero_1 = new Hero("罗娜", 8, 8, 8, 8, 8, 2);
         var hero_2 = new Hero("波尔", 10, 9, 10, 6, 9, 3);
         hero_1.isInTeam = true;
@@ -111,7 +112,6 @@ var Main = (function (_super) {
         var sword = new Equipment("宝剑", 1, 15, ruen_2);
         hero_1.equip(knife);
         hero_2.equip(sword);
-        var user = new User("超高校级的领主");
         user.heros.push(hero_1);
         user.heros.push(hero_2);
         console.log(user.getFightPower());

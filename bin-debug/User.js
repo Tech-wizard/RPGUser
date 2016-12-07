@@ -1,3 +1,9 @@
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 var User = (function () {
     // pet: pet;
     function User(name) {
@@ -110,6 +116,18 @@ var Hero = (function () {
         this._EV = this.EV;
         this._HIT = this.HIT;
     };
+    __decorate([
+        logger
+    ], p, "maxHp", null);
+    __decorate([
+        logger
+    ], p, "HIT", null);
+    __decorate([
+        logger
+    ], p, "CRIT", null);
+    __decorate([
+        logger
+    ], p, "EV", null);
     return Hero;
 }());
 egret.registerClass(Hero,'Hero');
@@ -177,16 +195,16 @@ egret.registerClass(rune,'rune');
 //         return 200;
 //     }
 // }
-var logger = function (target, key, desc) {
-    var method = desc.value;
-    desc.velue = function () {
+var logger = function (target, propertykey, desc) {
+    var getter = desc.get;
+    desc.get = function n() {
         var arg = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             arg[_i - 0] = arguments[_i];
         }
-        console.log("111");
-        return method.apply(this, arg);
+        return getter.apply(this, arg);
     };
+    return;
 };
 var Cache = function (target, propertykey, desc) {
     var method = desc.value;

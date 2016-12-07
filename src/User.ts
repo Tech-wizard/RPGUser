@@ -117,24 +117,24 @@ class Hero {
         this.heroInformationUpdate();
 
     }
-
+@logger
     get maxHp() {
 
         return this.CON * 10;
 
     }
-
+@logger
     get HIT() {
 
         return this.DEX * 7 + this.SPD * 2;
     }
-
+@logger
     get CRIT() {
 
         return this.DEX * 11;
 
     }
-
+@logger
     get EV() {
         return this.DEX * 5 + this.SPD * 7;
     }
@@ -285,16 +285,15 @@ class rune {
 
 
 
-var logger: MethodDecorator = (target, key, desc) => {
-    const method = desc.value;
-    desc.velue = function (...arg) {
-
-        console.log("111");
-        return method.apply(this, arg);
+var logger: MethodDecorator = (target:any, propertykey, desc:PropertyDescriptor) => {
+    const getter = desc.get;
+    desc.get = function n(...arg) {
+        return getter.apply(this, arg);
     }
+    return
 }
 
-var Cache: MethodDecorator = (target, propertykey, desc) => {
+var Cache: MethodDecorator = (target:any, propertykey, desc) => {
 
     const method = desc.value;
 
